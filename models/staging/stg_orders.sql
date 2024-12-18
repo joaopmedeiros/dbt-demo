@@ -18,8 +18,8 @@ renamed as (
         customer as customer_id,
 
         ---------- numerics
-        (order_total) as order_total,
-        (tax_paid) as tax_paid,
+        (order_total /100.0) as order_total,
+        (tax_paid /100.0) as tax_paid,
 
         ---------- timestamps
         {{dbt.date_trunc('day','ordered_at')}} as ordered_at
